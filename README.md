@@ -2,6 +2,25 @@
 
 `dummy-content` is a random dummy content generator. You can use it as a CLI tool or as a library for more specific purposes.
 
+## Table of contents
+
+- [The CLI](#the-cli)
+  - [Features](#features)
+  - [Get started](#get-started)
+- [The library](#the-library)
+  - [Installation from npm](#installation-from-npm)
+  - [Usage](#usage)
+    - [A word](#a-word)
+    - [Multiple words](#multiple-words)
+    - [A sentence](#a-sentence)
+    - [A paragraph](#a-paragraph)
+    - [Multiple paragraph](#multiple-paragraph)
+    - [HTML paragraph](#html-paragraph)
+    - [Multiple HTML paragraph elements](#multiple-html-paragraph-elements)
+    - [HTML heading](#html-heading)
+    - [Markdown heading](#markdown-heading)
+    - [Article like content](#article-like-content)
+
 ## The CLI
 
 ### Features
@@ -133,7 +152,7 @@ import { d } from "dummy-content";
 
 It contains functions that can generate from a single random word to whole randomized article like content. Let's see how to call and compose these functions starting from the most basic one generate radomized text.
 
-Note: Each of these functions are usually very small. And if you need something different you can easily replace one with your own written one. As long as it takes and returns the right kind of things, it will play nicely with other functions.
+**Note**: Each of these functions are usually very small. And if you need something different you can easily replace one with your own written one. As long as it takes and returns the right kind of things, it will play nicely with other functions.
 
 #### A word
 
@@ -234,13 +253,13 @@ Note that `dummy-content` doesn't prettify the output. It just generates the dum
 #### HTML heading
 
 ```ts
-const HtmlHeadingMaker = d.newHtmlHeadingMaker(
+const htmlHeadingMaker = d.newHtmlHeadingMaker(
   wordsMaker,
   d.idMaker,
   d.numberingMaker,
 );
 
-console.log(HtmlHeadingMaker(2, [2, 1, 1])); // <h2 id="h-2-1-1">2.1.1 Tic tic tic</h2>
+console.log(htmlHeadingMaker(2, [2, 1, 1])); // <h2 id="h-2-1-1">2.1.1 Tic tic tic</h2>
 ```
 
 `newHtmlHeadingMaker` returns a function which is called internally by `d.newContentMaker` which we will see soon. This returned function should be called with the heading level and hierarchical numbering order in an array in its 1st and 2nd argument respectively.
@@ -323,7 +342,7 @@ To get HTML output use HTML maker functions instead of markdown ones:
 ```ts
 const htmlContentMaker = new d.newContentMaker(
   paragraphElementsMaker,
-  HtmlHeadingMaker,
+  htmlHeadingMaker,
   paragraphElementsMaker,
   d.count(3),
   0.3,
