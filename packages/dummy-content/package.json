@@ -1,0 +1,69 @@
+{
+  "name": "dummy-content",
+  "version": "0.1.0",
+  "description": "A dummy content generator CLI and library.",
+  "bin": "./dist/bin/index.js",
+  "type": "module",
+  "main": "./dist/lib/index.cjs",
+  "module": "./dist/lib/index.js",
+  "types": "./dist/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/lib/index.d.ts",
+        "default": "./dist/lib/index.js"
+      },
+      "require": {
+        "types": "./dist/lib/index.d.cts",
+        "default": "./dist/lib/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm run build-lib && pnpm run build-cli",
+    "build-cli": "tsup src/index.ts --minify --format esm -d dist/bin",
+    "build-lib": "tsup src/lib/index.ts --minify --dts --sourcemap --format esm,cjs -d dist/lib",
+    "dev-cli": "tsup src/index.ts --format esm -d dist/bin --watch",
+    "dev-lib": "tsup src/lib/index.ts --format esm -d dist/lib --watch",
+    "lint": "eslint src/",
+    "lint-fix": "eslint src/ --fix",
+    "check-format": "prettier src/ --check",
+    "format": "prettier src/ --write"
+  },
+  "license": "MIT",
+  "author": "Ashutosh Biswas",
+  "homepage": "https://github.com/ashutoshbw/dummy-content",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashutoshbw/dummy-content.git"
+  },
+  "bugs": "https://github.com/ashutoshbw/dummy-content/issues",
+  "keywords": [
+    "dummy content",
+    "generator",
+    "lorem ipsum",
+    "headings",
+    "article",
+    "markdown",
+    "html",
+    "cli",
+    "library"
+  ],
+  "packageManager": "pnpm@10.5.2",
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@types/node": "^22.13.9",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1"
+  },
+  "dependencies": {
+    "clipboardy": "^4.0.0",
+    "node-html-parser": "^7.0.1"
+  }
+}
