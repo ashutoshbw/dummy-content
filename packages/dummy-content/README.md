@@ -234,13 +234,13 @@ Note that `dummy-content` doesn't prettify the output. It just generates the dum
 #### HTML heading
 
 ```ts
-const HtmlHeadingMaker = d.newHtmlHeadingMaker(
+const htmlHeadingMaker = d.newHtmlHeadingMaker(
   wordsMaker,
   d.idMaker,
   d.numberingMaker,
 );
 
-console.log(HtmlHeadingMaker(2, [2, 1, 1])); // <h2 id="h-2-1-1">2.1.1 Tic tic tic</h2>
+console.log(htmlHeadingMaker(2, [2, 1, 1])); // <h2 id="h-2-1-1">2.1.1 Tic tic tic</h2>
 ```
 
 `newHtmlHeadingMaker` returns a function which is called internally by `d.newContentMaker` which we will see soon. This returned function should be called with the heading level and hierarchical numbering order in an array in its 1st and 2nd argument respectively.
@@ -323,7 +323,7 @@ To get HTML output use HTML maker functions instead of markdown ones:
 ```ts
 const htmlContentMaker = new d.newContentMaker(
   paragraphElementsMaker,
-  HtmlHeadingMaker,
+  htmlHeadingMaker,
   paragraphElementsMaker,
   d.count(3),
   0.3,
