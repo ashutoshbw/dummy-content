@@ -14,7 +14,7 @@
     - [Multiple words](#multiple-words)
     - [A sentence](#a-sentence)
     - [A paragraph](#a-paragraph)
-    - [Multiple paragraph](#multiple-paragraph)
+    - [Multiple paragraphs](#multiple-paragraphs)
     - [HTML paragraph](#html-paragraph)
     - [Multiple HTML paragraph elements](#multiple-html-paragraph-elements)
     - [HTML heading](#html-heading)
@@ -198,7 +198,7 @@ console.log(paragraphTextMaker());
 
 The paragraph text contains maximum 8 sentences and minimum 4.
 
-#### Multiple paragraph
+#### Multiple paragraphs
 
 ```ts
 const paragraphTextsMaker = d.newParagraphTextsMaker(
