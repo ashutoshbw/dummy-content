@@ -113,10 +113,10 @@ npx dummy-content --sections 2,8 --output demo.html
 
 Note that you can also sepeciy a range after the `--sections` option. For `.md` and `.mdx` files it outputs markdown content. And for the HTML file it generates a html web page having dummy content in its body.
 
-In the next example we will see how to get other type of content than Lorem Ipsum. Currently there is one other variation. It called Prio Bangla, it outputs beautiful Bangla words. To use it, after the `--type` option specify `prio-bangla`:
+In the next example we will see how to get other type of content than Lorem Ipsum. Currently there is one other variation. It called Kabbik Ipsum, it uses poetic Bengali words. To use it, after the `--type` option specify `kabbik-ipsum`:
 
 ```
-npx dummy-content --type prio-bangla
+npx dummy-content --type kabbik-ipsum
 ```
 
 ```

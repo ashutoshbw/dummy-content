@@ -19,8 +19,8 @@ export const contentTypes: ContentTypes = {
     numberingMaker,
     description: 'Random Lorem Ipsum text',
   },
-  'prio-bangla': {
-    words: words.prioBangla,
+  'kabbik-ipsum': {
+    words: words.kabbikIpsum,
     sentenceTerimnator: '।',
     numberingMaker(orders) {
       const formatter = new Intl.NumberFormat('bn', {
@@ -29,6 +29,6 @@ export const contentTypes: ContentTypes = {
       });
       return orders.map((n) => formatter.format(n)).join('.');
     },
-    description: 'Text made of random beautiful Bangla words',
+    description: 'Text made of random poetic Bengali words',
   },
 };

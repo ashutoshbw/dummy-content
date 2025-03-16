@@ -118,7 +118,7 @@ ${pc.bold('OPTIONS')}
   ${pc.green('--type <value>')}
       Specifies the type of dummy content. Available options are:
         - lorem-ipsum: Random Lorem Ipsum text
-        - prio-bangla: Text made of random beautiful Bangla words
+        - kabbik-ipsum: Text made of random poetic Bengali words
       Default: lorem-ipsum
 
 ${pc.bold('CONFIGURATION FILE')}

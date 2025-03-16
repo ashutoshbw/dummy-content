@@ -1,4 +1,4 @@
 import loremIpsum from './lorem-ipsum';
-import prioBangla from './prio-bangla';
+import kabbikIpsum from './kabbik-ipsum';
 
-export default { loremIpsum, prioBangla };
+export default { loremIpsum, kabbikIpsum };
