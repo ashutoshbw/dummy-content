@@ -1,5 +1,11 @@
 # dummy-content
 
+## 1.0.1
+
+### Patch Changes
+
+- 0d24fa7: **Bug fix(CLI)**: Fix no element found with id problem of an existing element having the right id.
+
 ## 1.0.0
 
 ### Major Changes
