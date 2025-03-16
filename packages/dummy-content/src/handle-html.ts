@@ -36,7 +36,7 @@ export async function createOrFillHtml(
           if (attributes.id === id) {
             // parser startIndex and endIndex reference: https://github.com/fb55/htmlparser2/issues/1224#issuecomment-1166629597
             startIndex = parser.endIndex + 1;
-          } else if (endTagFound == false) {
+          } else if (startIndex !== null && endTagFound == false) {
             innerDivs++;
           }
         }
