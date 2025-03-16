@@ -23,6 +23,9 @@ importers:
       htmlparser2:
         specifier: ^10.0.0
         version: 10.0.0
+      picocolors:
+        specifier: ^1.1.1
+        version: 1.1.1
     devDependencies:
       '@eslint/js':
         specifier: ^9.22.0
