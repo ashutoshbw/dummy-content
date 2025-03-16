@@ -1,6 +1,17 @@
-# Dummy Content
+<p align="center">
+  <img alt="npm version" src="https://img.shields.io/npm/v/dummy-content?style=for-the-badge">
+  <img alt="license" src="https://img.shields.io/github/license/ashutoshbw/dummy-content?style=for-the-badge">
+  <img alt="downloads" src="https://img.shields.io/npm/dt/dummy-content?style=for-the-badge">
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/ashutoshbw/dummy-content/ci.yml?style=for-the-badge">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ashutoshbw/dummy-content?style=for-the-badge">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ashutoshbw/dummy-content?style=for-the-badge">
+</p>
+
+<h1 align="center">Dummy Content</h1>
 
 `dummy-content` is a random dummy content generator. You can use it as a CLI tool or as a library for more specific purposes.
+
+Please give it a [star on github](https://github.com/ashutoshbw/dummy-content) if you find it useful.
 
 ## Table of contents
 
@@ -14,7 +25,7 @@
     - [Multiple words](#multiple-words)
     - [A sentence](#a-sentence)
     - [A paragraph](#a-paragraph)
-    - [Multiple paragraph](#multiple-paragraph)
+    - [Multiple paragraphs](#multiple-paragraphs)
     - [HTML paragraph](#html-paragraph)
     - [Multiple HTML paragraph elements](#multiple-html-paragraph-elements)
     - [HTML heading](#html-heading)
@@ -113,10 +124,10 @@ npx dummy-content --sections 2,8 --output demo.html
 
 Note that you can also sepeciy a range after the `--sections` option. For `.md` and `.mdx` files it outputs markdown content. And for the HTML file it generates a html web page having dummy content in its body.
 
-In the next example we will see how to get other type of content than Lorem Ipsum. Currently there is one other variation. It called Prio Bangla, it outputs beautiful Bangla words. To use it, after the `--type` option specify `prio-bangla`:
+In the next example we will see how to get other type of content than Lorem Ipsum. Currently there is one other variation. It called Kabbik Ipsum, it uses poetic Bengali words. To use it, after the `--type` option specify `kabbik-ipsum`:
 
 ```
-npx dummy-content --type prio-bangla
+npx dummy-content --type kabbik-ipsum
 ```
 
 ```
@@ -198,7 +209,7 @@ console.log(paragraphTextMaker());
 
 The paragraph text contains maximum 8 sentences and minimum 4.
 
-#### Multiple paragraph
+#### Multiple paragraphs
 
 ```ts
 const paragraphTextsMaker = d.newParagraphTextsMaker(
