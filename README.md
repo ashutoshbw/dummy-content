@@ -1,6 +1,17 @@
-# Dummy Content
+<p align="center">
+  <img alt="npm version" src="https://img.shields.io/npm/v/dummy-content?style=for-the-badge">
+  <img alt="license" src="https://img.shields.io/github/license/ashutoshbw/dummy-content?style=for-the-badge">
+  <img alt="downloads" src="https://img.shields.io/npm/dt/dummy-content?style=for-the-badge">
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/ashutoshbw/dummy-content/ci.yml?style=for-the-badge">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ashutoshbw/dummy-content?style=for-the-badge">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ashutoshbw/dummy-content?style=for-the-badge">
+</p>
+
+<h1 align="center">Dummy Content</h1>
 
 `dummy-content` is a random dummy content generator. You can use it as a CLI tool or as a library for more specific purposes.
+
+Please give it a [star on github](https://github.com/ashutoshbw/dummy-content) if you find it useful.
 
 ## Table of contents
 
