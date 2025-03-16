@@ -92,8 +92,8 @@ function getNextHLevel(
   startHLevel: number,
   deepness: number,
 ) {
-  if (Math.random() < deepness) {
-    return currentLevel == 6 ? 6 : currentLevel + 1;
+  if (Math.random() < deepness && currentLevel != 6) {
+    return currentLevel + 1;
   } else {
     return forgivingRandomInt(startHLevel, currentLevel);
   }
