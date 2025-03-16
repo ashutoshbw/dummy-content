@@ -3,6 +3,7 @@ import { readFile } from './utils';
 import fs from 'node:fs/promises';
 import { checkFileExists } from './utils';
 import * as htmlparser2 from 'htmlparser2';
+import pc from 'picocolors';
 
 function htmlTemplate(content: string) {
   return `<!doctype html>
@@ -26,28 +27,32 @@ export async function createOrFillHtml(
   if (id !== '') {
     const htmlString = await readFile(filePath);
 
+    let tagName: string | null = null;
     let startIndex: number | null = null;
     let endIndex: number | null = null;
     let endTagFound = false;
-    let innerDivs = 0;
+    let innerElements = 0;
     const parser = new htmlparser2.Parser({
       onopentag(name, attributes) {
-        if (name === 'div') {
-          if (attributes.id === id) {
-            // parser startIndex and endIndex reference: https://github.com/fb55/htmlparser2/issues/1224#issuecomment-1166629597
-            startIndex = parser.endIndex + 1;
-          } else if (startIndex !== null && endTagFound == false) {
-            innerDivs++;
-          }
+        if (attributes.id === id) {
+          tagName = name;
+          // parser startIndex and endIndex reference: https://github.com/fb55/htmlparser2/issues/1224#issuecomment-1166629597
+          startIndex = parser.endIndex + 1;
+        } else if (
+          name === tagName &&
+          startIndex !== null &&
+          endTagFound == false
+        ) {
+          innerElements++;
         }
       },
-      onclosetag(tagname) {
-        if (tagname === 'div') {
+      onclosetag(name) {
+        if (name === tagName) {
           if (startIndex !== null && endTagFound == false) {
-            if (innerDivs === 0) {
+            if (innerElements === 0) {
               endIndex = parser.startIndex;
               endTagFound = true;
-            } else innerDivs--;
+            } else innerElements--;
           }
         }
       },
@@ -61,7 +66,14 @@ export async function createOrFillHtml(
       await fs.writeFile(filePath, result);
       console.log(`${filename} is filled`);
     } else {
-      console.warn(`No element found of id '${id}' in '${filename}'`);
+      if (tagName === null) {
+        console.warn(`No element found of id '${id}' in '${filename}'`);
+      } else {
+        console.error(
+          `Unknown problem reading the HTML. Please open an issue at ${pc.blue(pc.underline('https://github.com/ashutoshbw/dummy-content/issues'))}`,
+        );
+        process.exit(1);
+      }
     }
   } else {
     const fileExists = checkFileExists(filePath);
