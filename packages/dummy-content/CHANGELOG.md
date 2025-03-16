@@ -1,5 +1,11 @@
 # dummy-content
 
+## 1.0.2
+
+### Patch Changes
+
+- 0e40d24: Added support of all elements when using the `id` option. Before it only worked for `<div>`s.
+
 ## 1.0.1
 
 ### Patch Changes

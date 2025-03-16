@@ -1,6 +1,6 @@
 {
   "name": "dummy-content",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A dummy content generator CLI and library.",
   "bin": "./dist/bin/index.js",
   "type": "module",
