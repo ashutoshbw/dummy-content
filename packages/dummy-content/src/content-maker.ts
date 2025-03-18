@@ -30,8 +30,8 @@ export function dummyContentMaker(conf: Required<DummyContentConfig>) {
     rep(conf['words-per-heading']),
   );
 
-  let introParagrapsMaker: undefined | (() => string);
-  let paragrapsMaker: undefined | (() => string);
+  let introParagraphsMaker: undefined | (() => string);
+  let paragraphsMaker: undefined | (() => string);
   let headingMaker: undefined | HeadingMaker;
 
   const resolvedNumberingMaker = conf['no-numbering']
@@ -39,14 +39,14 @@ export function dummyContentMaker(conf: Required<DummyContentConfig>) {
     : numberingMaker;
 
   if (conf.format == 'md') {
-    introParagrapsMaker = d.newParagraphTextsMaker(
+    introParagraphsMaker = d.newParagraphTextsMaker(
       d.newParagraphTextMaker(
         d.newSentenceMaker(introWordsMaker, sentenceTerimnator),
         rep(conf['intro-sentences-per-paragraph']),
       ),
       rep(conf['intro-paragraphs']),
     );
-    paragrapsMaker = d.newParagraphTextsMaker(
+    paragraphsMaker = d.newParagraphTextsMaker(
       d.newParagraphTextMaker(
         d.newSentenceMaker(wordsMaker, sentenceTerimnator),
         rep(conf['sentences-per-paragraph']),
@@ -59,7 +59,7 @@ export function dummyContentMaker(conf: Required<DummyContentConfig>) {
       resolvedNumberingMaker,
     );
   } else if (conf.format == 'html') {
-    introParagrapsMaker = d.newParagraphElementsMaker(
+    introParagraphsMaker = d.newParagraphElementsMaker(
       d.newParagraphElementMaker(
         d.newParagraphTextMaker(
           d.newSentenceMaker(introWordsMaker, sentenceTerimnator),
@@ -68,7 +68,7 @@ export function dummyContentMaker(conf: Required<DummyContentConfig>) {
       ),
       rep(conf['intro-paragraphs']),
     );
-    paragrapsMaker = d.newParagraphElementsMaker(
+    paragraphsMaker = d.newParagraphElementsMaker(
       d.newParagraphElementMaker(
         d.newParagraphTextMaker(
           d.newSentenceMaker(wordsMaker, sentenceTerimnator),
@@ -84,11 +84,11 @@ export function dummyContentMaker(conf: Required<DummyContentConfig>) {
     );
   }
 
-  if (introParagrapsMaker && paragrapsMaker && headingMaker) {
+  if (introParagraphsMaker && paragraphsMaker && headingMaker) {
     const contentMaker = d.newContentMaker(
-      introParagrapsMaker,
+      introParagraphsMaker,
       headingMaker,
-      paragrapsMaker,
+      paragraphsMaker,
       rep(conf.sections),
       conf.emptyness,
       conf.deepness,
