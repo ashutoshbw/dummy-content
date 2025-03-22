@@ -29,6 +29,7 @@ Please give it a [star on github](https://github.com/ashutoshbw/dummy-content) i
     - [HTML heading](#html-heading)
     - [Markdown heading](#markdown-heading)
     - [Article like content](#article-like-content)
+- [Interested in contributing?](#interested-in-contributing)
 
 ## The CLI
 
@@ -359,3 +360,7 @@ const htmlContentMaker = new d.newContentMaker(
   2,
 );
 ```
+
+## Interested in contributing?
+
+See [CONTRIBUTING.md](https://github.com/ashutoshbw/dummy-content/blob/main/CONTRIBUTING.md).
