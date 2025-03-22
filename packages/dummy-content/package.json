@@ -23,6 +23,7 @@
     "dist"
   ],
   "scripts": {
+    "test": "vitest run --reporter=verbose",
     "build": "pnpm run build-lib && pnpm run build-cli",
     "build-cli": "tsup src/index.ts --minify --format esm -d dist/bin",
     "build-lib": "tsup src/lib/index.ts --minify --dts --sourcemap --format esm,cjs -d dist/lib",
@@ -60,7 +61,8 @@
     "prettier": "^3.5.3",
     "tsup": "^8.4.0",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.1"
+    "typescript-eslint": "^8.26.1",
+    "vitest": "^3.0.9"
   },
   "dependencies": {
     "clipboardy": "^4.0.0",
