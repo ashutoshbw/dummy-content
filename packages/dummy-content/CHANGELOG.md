@@ -1,5 +1,11 @@
 # dummy-content
 
+## 1.0.3
+
+### Patch Changes
+
+- 28fd190: Update kabbik-ipsum words.
+
 ## 1.0.2
 
 ### Patch Changes
